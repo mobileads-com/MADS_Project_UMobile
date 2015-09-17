@@ -1,0 +1,413 @@
+@font-face {
+    font-family: "DIN Round Pro Regular";
+    src: url(fonts/DINRoundPro.otf);
+}
+
+@font-face {
+    font-family: "DIN Round Pro Medium";
+    src: url(fonts/DINRoundPro-Medium.otf);
+}
+
+@font-face {
+    font-family: "DIN Round Pro Bold";
+    src: url(fonts/DINRoundPro-Bold.otf);
+}
+
+body {
+    width: 320px;
+    height: 480px;
+    margin: 0;
+    padding: 0;
+    font-family: "DIN Round Pro Regular";
+    overflow: hidden;
+}
+
+#rma-widget {
+    width: 320px;
+    height: 480px;
+    background: url("../img/screen4-bg.png") no-repeat;
+}
+
+.first-screen {
+    width: 320px;
+    height: 480px;
+    padding-top: 150px;
+    background: url("../img/screen1-bg.png") no-repeat;
+    animation-name: hideScreen;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 5s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: hideScreen;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 5s;
+    -webkit-animation-iteration-count: 1;
+}
+.first-screen p, .second-screen p, .third-screen p, .fifth-screen p, .sixth-screen p {
+    margin: 0;
+    padding: 0;
+    color: #ffffff;
+    -webkit-transform: rotate(-4deg);
+    -moz-transform: rotate(-4deg);
+    transform: rotate(-4deg);
+}
+.first-screen .title, .second-screen .title, .third-screen .title, .fifth-screen .title, .sixth-screen .title {
+    font-family: "DIN Round Pro Bold";
+    font-size: 52pt;
+    line-height: 50pt;
+    text-align: center;
+    text-shadow: 5px 5px #f05323;
+}
+.first-screen .title {
+    position: relative;
+}
+.first-screen .title .first-line {
+    position: absolute;
+    top: -10px;
+    left: 40px;
+}
+.first-screen .title .second-line {
+    position: absolute;
+    top: 50px;
+    left: 10px;
+}
+.first-screen .msg {
+    position: relative;
+    margin: 150px 40px 0 40px;
+    font-size: 10pt;
+}
+.first-screen .msg .first-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.first-screen .msg .second-line {
+    position: absolute;
+    top: 20px;
+    left: -7px;
+}
+
+
+.second-screen, .third-screen, .fifth-screen {
+    width: 320px;
+    height: 480px;
+    animation-name: showScreen, hideScreen;
+    animation-duration: 0.5s, 0.5s;
+    animation-timing-function: linear, linear;
+    animation-delay: 0s, 5s;
+    animation-iteration-count: 1, 1;
+    -webkit-animation-name: showScreen, hideScreen;
+    -webkit-animation-duration: 0.5s, 0.5s;
+    -webkit-animation-timing-function: linear, linear;
+    -webkit-animation-delay: 0s, 5s;
+    -webkit-animation-iteration-count: 1, 1;
+    opacity: 1;
+}
+.second-screen {
+    padding-top: 70px;
+    background: url("../img/screen2-bg.png") no-repeat;
+}
+.second-screen .msg {
+    font-family: "DIN Round Pro Bold";
+    margin-top: 45px;
+    text-align: center;
+}
+.second-screen .msg p {
+    -webkit-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    transform: rotate(0deg);
+}
+.second-screen .msg .small-size {
+    font-size: 12px;
+    line-height: 24px;
+}
+.second-screen .msg .medium-size {
+    font-size: 28px;
+    line-height: 30px;
+}
+.second-screen .msg .big-size {
+    font-size: 40px;
+    line-height: 36px;
+}
+.second-screen .msg .bigger-size {
+    font-size: 44px;
+    line-height: 40px;
+}
+
+
+.third-screen {
+    padding-top: 140px;
+    background: url("../img/screen3-bg.png") no-repeat;
+}
+.third-screen .title {
+    position: relative;
+}
+.third-screen p, .fifth-screen p {
+    -webkit-transform: rotate(-5deg);
+    -moz-transform: rotate(-5deg);
+    transform: rotate(-5deg);
+}
+.third-screen .title .big-size {
+    font-size: 50pt;
+}
+.third-screen .title .huge-size {
+    font-size: 100pt;
+}
+.third-screen .title span.big-size {
+    position: absolute;
+    top: -20px;
+    left: 30px;
+}
+.third-screen .title span.huge-size {
+    position: absolute;
+    top: 0;
+    left: 130px;
+}
+.third-screen .title p.big-size {
+    position: absolute;
+    top: 100px;
+    left: 60px;
+}
+
+
+.fourth-screen {
+    width: 320px;
+    height: 480px;
+    padding-top: 100px;
+    background: url("../img/screen4-bg.png") no-repeat;
+    animation-name: showScreen;
+    animation-duration: 0s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: showScreen;
+    -webkit-animation-duration: 0s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    opacity: 1;
+}
+.fourth-screen .msg {
+    color: #ffffff;
+    margin: 0 50px 30px 50px;
+    font-size: 16pt;
+    text-align: center;
+}
+.fourth-screen .msg p {
+    margin: 0;
+    padding: 0;
+}
+.fourth-screen #phone-number {
+    width: 210px;
+    height: 40px;
+    line-height: 40px;
+    padding-left: 10px;
+    margin: 0 50px;
+    color: #ffffff;
+    font-size: 18px;
+    background-color: #f68b1f;
+    border: none;
+    border-radius: 5px;
+}
+.fourth-screen #submit-btn {
+    width: 216px;
+    height: 36px;
+    margin: 20px 50px 0 50px;
+    color: #ffffff;
+    font-size: 18px;
+    font-weight: bold;
+    background-color: #f68b1f;
+    border: 2px solid #ffffff;
+    border-radius: 5px;
+}
+::-webkit-input-placeholder {
+    color:    #ffffff;
+}
+:-moz-placeholder {
+    color:    #ffffff;
+    opacity:  1;
+}
+::-moz-placeholder {
+    color:    #ffffff;
+    opacity:  1;
+}
+
+
+.fifth-screen {
+    padding-top: 70px;
+    background: url("../img/screen5-bg.png") no-repeat;
+}
+.fifth-screen .title .huge-size {
+    font-size: 60pt;
+    text-align: left;
+    margin-left: 40px;
+}
+.fifth-screen .title .medium-size {
+    font-size: 24pt;
+    text-align: right;
+    margin-right: 40px;
+    text-shadow: 3px 3px #f05323;
+}
+.fifth-screen .msg {
+    position: relative;
+    font-size: 14px;
+    line-height: 18px;
+    margin: 18px 70px 0 70px;
+}
+.fifth-screen .msg .first-line {
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+.fifth-screen .msg .second-line {
+    position: absolute;
+    top: 14px;
+    left: -7px;
+}
+.fifth-screen .msg .third-line {
+    position: absolute;
+    top: 34px;
+    left: -14px;
+}
+
+
+.sixth-screen {
+    padding-top: 160px;
+    background: url("../img/screen6-bg.png") no-repeat;
+    width: 320px;
+    height: 480px;
+    animation-name: showScreen;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: showScreen;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    opacity: 1;
+}
+.sixth-screen .title {
+    font-size: 200pt;
+    text-shadow: 7px 7px #f05323;
+}
+
+
+.seventh-screen {
+    width: 320px;
+    height: 480px;
+    padding-top: 160px;
+    background: url("../img/screen4-bg.png") no-repeat;
+    position: relative;
+    overflow: hidden;
+}
+.seventh-screen .explosion-img {
+    width: 721px;
+    height: 723px;
+    position: absolute;
+    left: -240px;
+    bottom: 190px;
+    animation-name: explosion;
+    animation-duration: 0.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: explosion;
+    -webkit-animation-duration: 0.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+}
+.seventh-screen .hero-img {
+    width: 272px;
+    height: 70px;
+    position: absolute;
+    left: 24px;
+    animation-name: showHero;
+    animation-duration: 1.5s;
+    animation-timing-function: linear;
+    animation-delay: 0s;
+    animation-iteration-count: 1;
+    -webkit-animation-name: showHero;
+    -webkit-animation-duration: 1.5s;
+    -webkit-animation-timing-function: linear;
+    -webkit-animation-delay: 0s;
+    -webkit-animation-iteration-count: 1;
+    opacity: 1;
+}
+
+
+.eight-screen {
+    width: 320px;
+    height: 480px;
+    background: url("../img/screen8-bg.png") no-repeat;
+}
+
+@-webkit-keyframes hideScreen {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+@-webkit-keyframes showScreen {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@-webkit-keyframes explosion {
+    0% {
+        width: 151px;
+        height: 152px;
+        position: absolute;
+        left: 85px;
+        top: 150px;
+    }
+    25% {
+        width: 185px;
+        height: 187px;
+        position: absolute;
+        left: 67px;
+        top: 120px;
+    }
+    50% {
+        width: 210px;
+        height: 213px;
+        position: absolute;
+        left: 55px;
+        top: 100px;
+    }
+    75% {
+        width: 305px;
+        height: 306px;
+        position: absolute;
+        left: 8px;
+        top: 0;
+    }
+    100% {
+        width: 721px;
+        height: 723px;
+        position: absolute;
+        left: -240px;
+        top: -280px;
+    }
+}
+
+@-webkit-keyframes showHero {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+
