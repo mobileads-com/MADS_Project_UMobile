@@ -184,6 +184,8 @@ var UMobileAd = function () {
     // Load local css
     sdk.loadCss( sdk.path + 'css/style.css');
 
+    this.phoneNumber = null;
+
     this.initFirstScreen(sdk.contentTag);
 };
 
@@ -294,22 +296,11 @@ UMobileAd.prototype.show4thScreen = function (parent, timeout) {
 };
 
 UMobileAd.prototype.submitForm = function () {
-    var xhr = new XMLHttpRequest();
     var inputValue = document.getElementById('phone-number').value;
     var me = ad;
-    var params = 'mobile=' + inputValue;
 
-    xhr.open("POST", msgObj.fourthScreen.formURL, true);
-    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-
-    xhr.onreadystatechange = function () {
-        if (xhr.readyState == 4 && xhr.status == 200)
-        {
-            me.show5thScreen(document.getElementById('rma-widget'), 500);
-        }
-    };
-
-    xhr.send(params);
+    me.phoneNumber = inputValue;
+    me.show5thScreen(document.getElementById('rma-widget'), 500);
 };
 
 UMobileAd.prototype.show5thScreen = function (parent, timeout) {
@@ -362,6 +353,9 @@ UMobileAd.prototype.show7thScreen = function (parent, timeout) {
     var div = document.createElement('DIV');
     var explosionImg = document.createElement('IMG');
     var heroImg = document.createElement('IMG');
+    var xhr = new XMLHttpRequest();
+    var me = this;
+    var params = 'mobile=' + me.phoneNumber;
 
     explosionImg.setAttribute('class', 'explosion-img');
     explosionImg.setAttribute('src', 'img/explosion.png');
@@ -375,15 +369,25 @@ UMobileAd.prototype.show7thScreen = function (parent, timeout) {
     div.setAttribute('id', 'seventh-screen');
     parent.appendChild(div);
 
-    setTimeout(function () {
-        var lastScreen = document.createElement('DIV');
-        var seventhScreen = document.getElementById('seventh-screen');
+    xhr.open("POST", msgObj.fourthScreen.formURL, true);
+    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState == 4 && xhr.status == 200)
+        {
+            setTimeout(function () {
+                var lastScreen = document.createElement('DIV');
+                var seventhScreen = document.getElementById('seventh-screen');
 
-        seventhScreen.style.display = 'none';
-        lastScreen.setAttribute('class', 'eight-screen');
-        lastScreen.setAttribute('id', 'eight-screen');
-        parent.appendChild(lastScreen);
-    }, timeout);
+                seventhScreen.style.display = 'none';
+                lastScreen.setAttribute('class', 'eight-screen');
+                lastScreen.setAttribute('id', 'eight-screen');
+                parent.appendChild(lastScreen);
+            }, timeout);
+        }
+    };
+    setTimeout(function () {
+        xhr.send(params);
+    }, 1000);
 };
 
 UMobileAd.prototype.countDown = function (duration, display, parent) {
