@@ -36,12 +36,12 @@ body {
     animation-name: hideScreen;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-delay: 5s;
+    animation-delay: 4s;
     animation-iteration-count: 1;
     -webkit-animation-name: hideScreen;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 5s;
+    -webkit-animation-delay: 4s;
     -webkit-animation-iteration-count: 1;
 }
 .first-screen p, .second-screen p, .third-screen p, .fifth-screen p, .sixth-screen p {

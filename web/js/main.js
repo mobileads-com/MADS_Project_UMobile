@@ -164,7 +164,7 @@ var msgObj = {
         '<p>ENTER YOUR</p>' +
         '<p>FRIEND\'S\/YOUR OWN</p>' +
         '<p>NUMBER:</p>',
-        phoneNumberPlaceholder : '+6018 XXX XXXX',
+        phoneNumberPlaceholder : '018 XXX XXXX',
         buttonText : 'I Accept',
         formURL : 'https://api.mobileads.com/twilio/index.php'
     },
@@ -186,7 +186,36 @@ var UMobileAd = function () {
 
     this.phoneNumber = null;
 
+    this.preloadImages(sdk.bodyTag);
     this.initFirstScreen(sdk.contentTag);
+};
+
+UMobileAd.prototype.preloadImages = function (parent) {
+    var script = document.createElement('SCRIPT');
+    var str = '';
+
+    str = str + 'var pic1 = new Image();' +
+    'var pic2 = new Image();' +
+    'var pic3 = new Image();' +
+    'var pic4 = new Image();' +
+    'var pic5 = new Image();' +
+    'var pic6 = new Image();' +
+    'var pic7 = new Image();' +
+    'var pic8 = new Image();' +
+    'var pic9 = new Image();' +
+    'pic1.src="img/explosion.png";' +
+    'pic2.src="img/hero.png";' +
+    'pic3.src="img/screen1-bg.png";' +
+    'pic4.src="img/screen2-bg.png";' +
+    'pic5.src="img/screen3-bg.png";' +
+    'pic6.src="img/screen4-bg.png";' +
+    'pic7.src="img/screen5-bg.png";' +
+    'pic8.src="img/screen6-bg.png";' +
+    'pic9.src="img/screen8-bg.png";';
+
+    script.innerHTML = str;
+
+    parent.appendChild(script);
 };
 
 UMobileAd.prototype.initFirstScreen = function (parent) {
@@ -206,7 +235,7 @@ UMobileAd.prototype.initFirstScreen = function (parent) {
     div.setAttribute('id', 'first-screen');
     parent.appendChild(div);
 
-    this.showSecondScreen(parent, 4000);
+    this.showSecondScreen(parent, 4500);
 };
 
 UMobileAd.prototype.showSecondScreen = function (parent, timeout) {
@@ -355,7 +384,7 @@ UMobileAd.prototype.show7thScreen = function (parent, timeout) {
     var heroImg = document.createElement('IMG');
     var xhr = new XMLHttpRequest();
     var me = this;
-    var params = 'mobile=' + me.phoneNumber;
+    var params = 'mobile=+6' + me.phoneNumber;
 
     explosionImg.setAttribute('class', 'explosion-img');
     explosionImg.setAttribute('src', 'img/explosion.png');
@@ -375,6 +404,7 @@ UMobileAd.prototype.show7thScreen = function (parent, timeout) {
         if (xhr.readyState == 4 && xhr.status == 200)
         {
             setTimeout(function () {
+                console.log(xhr.responseText)
                 var lastScreen = document.createElement('DIV');
                 var seventhScreen = document.getElementById('seventh-screen');
 
