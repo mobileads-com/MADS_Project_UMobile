@@ -374,7 +374,7 @@ UMobileAd.prototype.show6thScreen = function (parent, timeout) {
         div.setAttribute('id', 'sixth-screen');
         parent.appendChild(div);
 
-        me.countDown(3, title, parent);
+        me.countDown(4, title, parent);
     }, timeout);
 };
 
