@@ -291,6 +291,7 @@ UMobileAd.prototype.show4thScreen = function (parent, timeout) {
     var form = document.createElement('FORM');
     var input = document.createElement('INPUT');
     var submit = document.createElement('INPUT');
+    var span = document.createElement('SPAN');
 
     setTimeout(function () {
         thirdScreen.style.display = 'none';
@@ -302,10 +303,13 @@ UMobileAd.prototype.show4thScreen = function (parent, timeout) {
         form.setAttribute('action', msgObj.fourthScreen.formURL);
         form.setAttribute('method', 'post');
         div.appendChild(form);
+        
+        span.setAttribute('id', 'label');
+        span.innerHTML = '+6';
+        form.appendChild(span);
 
         input.setAttribute('type', 'text');
         input.setAttribute('required', 'true');
-        input.setAttribute('placeholder', msgObj.fourthScreen.phoneNumberPlaceholder);
         input.setAttribute('id', 'phone-number');
         input.setAttribute('name', 'phone-number');
         form.appendChild(input);
