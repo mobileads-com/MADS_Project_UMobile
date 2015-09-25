@@ -41,12 +41,12 @@ body {
     animation-name: hideScreen;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-delay: 3s;
+    animation-delay: 4s;
     animation-iteration-count: 1;
     -webkit-animation-name: hideScreen;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 3s;
+    -webkit-animation-delay: 4s;
     -webkit-animation-iteration-count: 1;
 }
 .first-screen p, .second-screen p, .third-screen p, .fifth-screen p, .sixth-screen p {
@@ -100,12 +100,12 @@ body {
     animation-name: showScreen, hideScreen;
     animation-duration: 0.5s, 0.5s;
     animation-timing-function: linear, linear;
-    animation-delay: 0s, 4s;
+    animation-delay: 0s, 5s;
     animation-iteration-count: 1, 1;
     -webkit-animation-name: showScreen, hideScreen;
     -webkit-animation-duration: 0.5s, 0.5s;
     -webkit-animation-timing-function: linear, linear;
-    -webkit-animation-delay: 0s, 4s;
+    -webkit-animation-delay: 0s, 5s;
     -webkit-animation-iteration-count: 1, 1;
     opacity: 1;
 }
@@ -215,11 +215,12 @@ body {
     position: absolute;
     font-size: 18px;
     color: #f68b1f;
-    top: 274px;
+    /*top: 274px;*/
     left: 50px;
     z-index: 1000;
     width: 50px;
     height: 50px;
+    padding-top: 6px;
 }
 .fourth-screen #phone-number {
     margin-right: 35px;

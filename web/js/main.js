@@ -182,8 +182,8 @@
     var sdk = new mads();
 
     // Load local css
-    sdk.loadCss( sdk.path + 'css/bootstrap.min.css');
     sdk.loadCss( sdk.path + 'css/style.css');
+
 
     this.phoneNumber = null;
 
@@ -236,7 +236,7 @@
   	div.setAttribute('id', 'first-screen');
   	parent.appendChild(div);
 
-  	this.showSecondScreen(parent, 4500);
+  	this.showSecondScreen(parent, 4000);
   };
 
   UMobileAd.prototype.showSecondScreen = function (parent, timeout) {
@@ -334,7 +334,7 @@
   		parent.appendChild(div);
 
   		submit.addEventListener('click', me.submitForm, false);
-  	}, 3000);
+  	}, 5000);
 };
 
 UMobileAd.prototype.submitForm = function () {
