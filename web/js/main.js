@@ -236,7 +236,7 @@
   	div.setAttribute('id', 'first-screen');
   	parent.appendChild(div);
 
-  	this.showSecondScreen(parent, 4000);
+  	this.showSecondScreen(parent, 3000);
   };
 
   UMobileAd.prototype.showSecondScreen = function (parent, timeout) {
@@ -260,7 +260,7 @@
   		div.setAttribute('class', 'second-screen');
   		div.setAttribute('id', 'second-screen');
   		parent.appendChild(div);
-  		me.showThirdScreen(parent, 4000);
+  		me.showThirdScreen(parent, 3000);
   	}, timeout);
   };
 
@@ -334,7 +334,7 @@
   		parent.appendChild(div);
 
   		submit.addEventListener('click', me.submitForm, false);
-  	}, 5000);
+  	}, 3000);
 };
 
 UMobileAd.prototype.submitForm = function () {
