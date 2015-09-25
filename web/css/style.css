@@ -26,6 +26,7 @@ body {
   display: none !important;
 }
 
+
 #rma-widget {
     width: 320px;
     height: 480px;
@@ -40,12 +41,12 @@ body {
     animation-name: hideScreen;
     animation-duration: 0.5s;
     animation-timing-function: linear;
-    animation-delay: 4s;
+    animation-delay: 3s;
     animation-iteration-count: 1;
     -webkit-animation-name: hideScreen;
     -webkit-animation-duration: 0.5s;
     -webkit-animation-timing-function: linear;
-    -webkit-animation-delay: 4s;
+    -webkit-animation-delay: 3s;
     -webkit-animation-iteration-count: 1;
 }
 .first-screen p, .second-screen p, .third-screen p, .fifth-screen p, .sixth-screen p {
@@ -99,12 +100,12 @@ body {
     animation-name: showScreen, hideScreen;
     animation-duration: 0.5s, 0.5s;
     animation-timing-function: linear, linear;
-    animation-delay: 0s, 5s;
+    animation-delay: 0s, 4s;
     animation-iteration-count: 1, 1;
     -webkit-animation-name: showScreen, hideScreen;
     -webkit-animation-duration: 0.5s, 0.5s;
     -webkit-animation-timing-function: linear, linear;
-    -webkit-animation-delay: 0s, 5s;
+    -webkit-animation-delay: 0s, 4s;
     -webkit-animation-iteration-count: 1, 1;
     opacity: 1;
 }
@@ -204,9 +205,10 @@ body {
 }
 
 .fourth-screen p.notification{
-    color: white;
+    color: red;
     text-align: center;
     font-size: 14px;
+    margin-top: 15px;
 }
 
 .fourth-screen span#label {
@@ -243,6 +245,7 @@ body {
     border: 2px solid #ffffff;
     border-radius: 5px;
 }
+
 ::-webkit-input-placeholder {
     color:    #ffffff;
 }

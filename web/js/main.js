@@ -342,13 +342,20 @@ UMobileAd.prototype.submitForm = function () {
 	document.getElementById("alert-notification").className = "";
 	document.getElementById("alert-notification").className = "notification hidden";
 	var inputValue = document.getElementById('phone-number').value;
-	if(inputValue.length > 0){
+	var num = isNaN(inputValue);
+
+	if(inputValue.length > 0 && num == false){
 		var me = ad;
 		me.phoneNumber = inputValue;
 		me.show5thScreen(document.getElementById('rma-widget'), 500);
-	}
-	else{
+	}else if(num){
 		document.getElementById('alert-notification').innerHTML = "Please enter a valid phone number."
+		document.getElementById("alert-notification").className = "";
+		document.getElementById("alert-notification").className = "notification";
+		document.getElementById('submit-btn').style.marginTop = '5px'
+		document.getElementById('phone-number').focus();
+	}else{
+		document.getElementById('alert-notification').innerHTML = "Please enter your phone number."
 		document.getElementById("alert-notification").className = "";
 		document.getElementById("alert-notification").className = "notification";
 		document.getElementById('submit-btn').style.marginTop = '5px'
@@ -428,7 +435,7 @@ UMobileAd.prototype.show7thScreen = function (parent, timeout) {
 		if (xhr.readyState == 4 && xhr.status == 200)
 		{
 			setTimeout(function () {
-				console.log(xhr.responseText)
+				
 				var lastScreen = document.createElement('DIV');
 				var seventhScreen = document.getElementById('seventh-screen');
 
