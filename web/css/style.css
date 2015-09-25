@@ -22,6 +22,10 @@ body {
     overflow: hidden;
 }
 
+.hidden {
+  display: none !important;
+}
+
 #rma-widget {
     width: 320px;
     height: 480px;
@@ -198,6 +202,13 @@ body {
     margin: 0;
     padding: 0;
 }
+
+.fourth-screen p.notification{
+    color: white;
+    text-align: center;
+    font-size: 14px;
+}
+
 .fourth-screen span#label {
     position: absolute;
     font-size: 18px;
