@@ -104,7 +104,16 @@ var msgObj = {
     }
 };
 var UMobileAd = function() {
+    
     var sdk = new mads();
+    
+    this.ct = document.createElement('div');
+    this.ct.setAttribute('style', 'width: 320px;height: 480px;position: absolute;top: 0;left: 0;');
+    this.ct.addEventListener('click', function () {
+        sdk.tracker('CTR','site');
+        sdk.linkOpener('http://www.u.com.my/postpaid');
+    });
+    
     var startSeconds = new Date().getTime() / 1000;
     sdk.listen({
         'callback': function(msg) {
@@ -189,6 +198,7 @@ UMobileAd.prototype.show4thScreen = function(parent, timeout) {
     var submit = document.createElement('INPUT');
     var span = document.createElement('SPAN');
     var notification = document.createElement('P');
+    
     setTimeout(function() {
         thirdScreen.style.display = 'none';
         message.setAttribute('class', 'msg');
@@ -196,7 +206,9 @@ UMobileAd.prototype.show4thScreen = function(parent, timeout) {
         div.appendChild(message);
         form.setAttribute('action', msgObj.fourthScreen.formURL);
         form.setAttribute('method', 'post');
+        form.setAttribute('style', 'position: relative;z-index:10;');
         div.appendChild(form);
+        div.appendChild(me.ct);
         span.setAttribute('id', 'label');
         span.innerHTML = '+6';
         form.appendChild(span);
@@ -295,7 +307,9 @@ UMobileAd.prototype.show7thScreen = function(parent, timeout) {
     div.appendChild(heroImg);
     div.setAttribute('class', 'seventh-screen');
     div.setAttribute('id', 'seventh-screen');
+    div.appendChild(this.ct);
     parent.appendChild(div);
+    
     xhr.open("POST", msgObj.fourthScreen.formURL, true);
     xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
     xhr.onreadystatechange = function() {
@@ -306,6 +320,7 @@ UMobileAd.prototype.show7thScreen = function(parent, timeout) {
                 seventhScreen.style.display = 'none';
                 lastScreen.setAttribute('class', 'eight-screen');
                 lastScreen.setAttribute('id', 'eight-screen');
+                lastScreen.appendChild(me.ct);
                 parent.appendChild(lastScreen);
             }, timeout);
         }
